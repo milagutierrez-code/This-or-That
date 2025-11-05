@@ -6,7 +6,7 @@ THIS CODE SHOULD NOT BE USED TO DETERMINE ANY PURCHASES!
  
  
 Authors in chronological order of contribution:
-[Kimberly Mays]
+[Mila Gutierrez]
 	
 Further Information:
 https://www.w3schools.com/w3css/default.asp
@@ -17,7 +17,7 @@ Timothy Riedel
 triedel@utexas.edu
  
 Brief Description of Goal of Code:
-[Do you want to live in the city or the country?]
+[Is a cat or a dog more suitable for you?]
 	
 Known Issues:
 [N/A]
@@ -25,7 +25,7 @@ Known Issues:
 -->
 	
    <head> 
-      <title>Do You Want to Live in the City or the Country?</title>  
+      <title>Is a cat or a dog more suitable for you?</title>  
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="mobile-web-app-capable" content="yes">
       <link rel="stylesheet" href="w3.css">
@@ -34,24 +34,24 @@ Known Issues:
 
 
 <script>
-        var city_count = 0;//variable to keep track of the number of times the user answers a question that leads to the city preference 
-        var country_count = 0;//variable to keep track of the number of times the user answers a question that leads to the country preference 
+        var cat_count = 0;//variable to keep track of the number of times the user answers a question that leads to the cat preference 
+        var dog_count = 0;//variable to keep track of the number of times the user answers a question that leads to the dog preference 
 
-        function cityAdd(){ //this function is used to add an additional count to city_count each time it is called
-            city_count = city_count + 1; 
-		//alert("city_count is " + city_count); I wanted to further clarify that the alert is displaying the count for city_count, but this code is now irrelevant
+        function catAdd(){ //this function is used to add an additional count to cat_count each time it is called
+            cat_count = cat_count + 1; 
+		//alert("cat_count is " + cat_count); I wanted to further clarify that the alert is displaying the count for cat_count, but this code is now irrelevant
         }
 
-        function countryAdd(){
-            country_count = country_count + 1;//this function is used to add an additional count to country_count each time it is called
-		//alert("country_count is " + country_count); I wanted to add further clarify that the alert is displaying the count for country_count, but this code is now irrelevant
+        function dogAdd(){
+            dog_count = dog_count + 1;//this function is used to add an additional count to dog_count each time it is called
+		//alert("dog_count is " + dog_count); I wanted to add further clarify that the alert is displaying the count for dog_count, but this code is now irrelevant
         }
 
 	function outputResults(){
-		var percent_city = city_count/(city_count + country_count)*100; // This line converts the city_count into a percentage
-		var percent_country = country_count/(city_count + country_count)*100; // This line converts the country_count into a percentage
+		var percent_cat = cat_count/(cat_count + dog_count)*100; // This line converts the cat_count into a percentage
+		var percent_dog = dog_count/(cat_count + dog_count)*100; // This line converts the dog_count into a percentage
 		var resultsText = document.getElementById("resultsLocation"); // creates a java script link between the variable called "resultsText" and the page element with id of resultsLocation
-		resultsLocation.innerHTML = "Your Preference is the City = " + percent_city + "% <br> Your Preference is the Country = " + percent_country + "%" //This line replaces the text from the Results Page with the diagnosis
+		resultsLocation.innerHTML = "Your Preference is a Cat = " + percent_cat + "% <br> Your Preference is a Dog = " + percent_dog + "%" //This line replaces the text from the Results Page with the diagnosis
 	}
 
   </script>
@@ -82,11 +82,11 @@ Known Issues:
 
 <body>
 <div id="header" class="w3-container w3-flat-carrot">
-	<h1>City or Country?</h1> 
+	<h1>Cat or Dog?</h1> 
 </div>
 <!--this section displays the content that the user sees immediately upon opening the website-->
 <div id="content" class="w3-container">
-	<p>Do you know where you want to live? Answer a few short questions to find out!</p> <!--Introduce the user to the website-->
+	<p>Do you need help figuring out if you should get a cat or a dog? Answer a few short questions to find out!</p> <!--Introduce the user to the website-->
 
 	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a> <!-- this line presents the first button that users click to proceed to page one-->
 	
@@ -102,9 +102,9 @@ Known Issues:
 	</div>
 	
     	<div id="content" class="w3-container"> <!--creating the question and buttons for Q1-->
-		<p>Do you enjoy peaceful scenery?</p> <!--I asked the question for Question 1 (Q1) here.-->  
-		<a href="#two" onclick="countryAdd();" class="w3-btn w3-orange"> Peaceful </a> <!-- Create Yes (Peaceful) button for Q1. If clicked, adds one to country_count-->
-		<a href="#two" onclick="cityAdd();" class="w3-btn w3-orange"> Busy </a> <!-- Create No (Busy) button for Q1. If clicked, adds one to city_count-->
+		<p>Are you more of an introvert or an extrovert?</p> <!--I asked the question for Question 1 (Q1) here.-->  
+		<a href="#two" onclick="dogAdd();" class="w3-btn w3-orange"> Extrovert </a> <!-- Create Yes (Extrovert) button for Q1. If clicked, adds one to dog_count-->
+		<a href="#two" onclick="catAdd();" class="w3-btn w3-orange"> Introvert </a> <!-- Create No (Introvert) button for Q1. If clicked, adds one to dog_count-->
 	</div>
 </div>
 	
@@ -115,9 +115,9 @@ Known Issues:
 	</div>
 	
 	<div id="content" class="w3-container"> <!--creating the question and buttons for Q2-->
-		<p>Do you enjoy shopping at multiple stores on a regular basis?</p> <!--I asked the question for Q2 here.--> 
-		<a href="#three" onclick="cityAdd();" class="w3-btn w3-orange"> Yes </a> <!-- Create Yes button for Q2. If clicked, adds one to city_count-->
-		<a href="#three" onclick="countryAdd();" class="w3-btn w3-orange"> No </a> <!-- Create No button for Q2. If clicked, adds one to country_count-->
+		<p>Would you like staying at home or going out with your pet?</p> <!--I asked the question for Q2 here.--> 
+		<a href="#three" onclick="catAdd();" class="w3-btn w3-orange"> Staying at home </a> <!-- Create Yes button for Q2. If clicked, adds one to cat_count-->
+		<a href="#three" onclick="dogAdd();" class="w3-btn w3-orange"> Going out </a> <!-- Create No button for Q2. If clicked, adds one to dog_count-->
 	</div>
 </div>	
 	
@@ -128,9 +128,9 @@ Known Issues:
 	</div>
 
 	<div id="content" class="w3-container"> <!--creating the question and buttons for Q3-->
-		<p>Are you comfortable with large crowds?</p> <!--I asked the question for Q3 here.--> 
-		<a href="#four" onclick="cityAdd();" class="w3-btn w3-orange"> Yes </a> <!-- Create Yes button for Q3. If clicked, adds one to city_count-->
-		<a href="#four" onclick="countryAdd();" class="w3-btn w3-orange"> No </a> <!-- Create No button for Q3. If clicked, adds one to country_count-->
+		<p>Do you prefer a more independent pet or one that always need attention?</p> <!--I asked the question for Q3 here.--> 
+		<a href="#four" onclick="catAdd();" class="w3-btn w3-orange"> Independent </a> <!-- Create Yes button for Q3. If clicked, adds one to cat_count-->
+		<a href="#four" onclick="dogAdd();" class="w3-btn w3-orange"> Always needs attention </a> <!-- Create No button for Q3. If clicked, adds one to dog_count-->
 	</div>
 </div>
 	
@@ -141,9 +141,9 @@ Known Issues:
 	</div>
 
 	<div id="content" class="w3-container">
-		<p>Is seeing the stars at night important to you?</p> <!--I asked the question for Q4 here.--> 
-		<a href="#five" onclick="countryAdd();" class="w3-btn w3-orange"> Yes </a> <!-- Create Yes button for Q4. If clicked, adds one to country_count-->
-		<a href="#five" onclick="cityAdd();" class="w3-btn w3-orange"> No </a> <!-- Create No button for Q4. If clicked, adds one to city_count-->
+		<p>Do you leave for extended periods of time?</p> <!--I asked the question for Q4 here.--> 
+		<a href="#five" onclick="dogAdd();" class="w3-btn w3-orange"> No </a> <!-- Create Yes button for Q4. If clicked, adds one to dog_count-->
+		<a href="#five" onclick="catAdd();" class="w3-btn w3-orange"> Yes </a> <!-- Create No button for Q4. If clicked, adds one to cat_count-->
 	</div>
 </div>
 
@@ -155,8 +155,8 @@ Known Issues:
 
 	<div id="content" class="w3-container">
 		<p>Do you mind driving somewhat far distances on a daily basis? </p> <!--I asked the question for Q5 here.-->
-		<a href="#six" onclick="cityAdd();" class="w3-btn w3-orange"> Yes </a> <!-- Create Yes button for Q5. If clicked, adds one to city_count-->
-		<a href="#six" onclick="countryAdd();" class="w3-btn w3-orange"> No </a> <!-- Create No button for Q5. If clicked, adds one to country_count-->
+		<a href="#six" onclick="catAdd();" class="w3-btn w3-orange"> Yes </a> <!-- Create Yes button for Q5. If clicked, adds one to cat_count-->
+		<a href="#six" onclick="dogAdd();" class="w3-btn w3-orange"> No </a> <!-- Create No button for Q5. If clicked, adds one to dog_count-->
 	</div>
 </div>
 
@@ -168,8 +168,8 @@ Known Issues:
 
 	<div id="content" class="w3-container"> <!-- creating the content for Q6-->
 		<p>Do you enjoy gardening type work?</p> <!--I asked the question for Q6 here.-->
-		<a href="#seven" onclick="countryAdd();" class="w3-btn w3-orange"> Yes </a> <!-- Create Yes button for Q6. If clicked, adds one to country_count-->
-		<a href="#seven" onclick="cityAdd();" class="w3-btn w3-orange"> No </a> <!-- Create Yes button for Q6. If clicked, adds one to city_count-->
+		<a href="#seven" onclick="dogAdd();" class="w3-btn w3-orange"> Yes </a> <!-- Create Yes button for Q6. If clicked, adds one to dog_count-->
+		<a href="#seven" onclick="catAdd();" class="w3-btn w3-orange"> No </a> <!-- Create Yes button for Q6. If clicked, adds one to cat_count-->
 	</div>
 </div>
 
@@ -187,7 +187,7 @@ Known Issues:
 	
 
 <footer class="w3-bottom w3-container w3-flat-carrot">
-	<p>DIY!</p>
+	<p>meow meow woof woof</p>
 </footer>
 
 </body>
